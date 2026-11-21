@@ -1,0 +1,13 @@
+IP Sentinel V1.2.0 公开风险名单说明
+
+Tor Project
+https://check.torproject.org/torbulkexitlist
+https://blog.torproject.org/changes-tor-exit-list-service/
+Tor Project 提供该出口地址列表供下载和本地查询。程序在运行期间使用该数据源，不在安装文件内预分发其原始列表。Tor 出口标签仅指名单观察到的出口地址。
+
+MISP Warning Lists
+https://github.com/MISP/misp-warninglists
+https://creativecommons.org/publicdomain/zero/1.0/
+MISP 仓库说明其警示名单默认采用 CC0 1.0，部分来源保留上游许可。本程序使用的 VPN 和机房或 VPN 网段由 MISP 从 X4BNet 导入，保留随附的 X4BNet-MIT.txt 和源项目署名。
+https://github.com/X4BNet/lists_vpn
+https://github.com/MISP/misp-warninglists/blob/main/doc/licenses/X4BNet-lists_vpn.txt
