@@ -56,6 +56,7 @@ def runtime():
     actual = ssl.OPENSSL_VERSION_INFO[:3]
     ensure(sys.platform == "win32" and platform.machine().lower() in {"amd64", "x86_64"}
            and sys.maxsize > 2**32, "Windows x64 Python is required")
+    ensure(sys.version_info[:2] == (3, 12), "The reviewed release wheel lock requires CPython 3.12")
     ensure(ssl.OPENSSL_VERSION.startswith("OpenSSL "), "Unexpected TLS implementation")
     ensure(actual[:2] != (3, 5) or actual >= tuple(POLICY["openssl_minimum_3_5"]),
            f"{ssl.OPENSSL_VERSION} is below the required security baseline")
@@ -92,6 +93,14 @@ def runtime():
 
 def dependencies():
     expected = dict(line.split("==") for line in (ROOT / "packaging/release-lock.txt").read_text().splitlines())
+    hashed_lock = (ROOT / "packaging/release-lock-cp312-win_amd64.txt").read_text(encoding="utf-8")
+    locked = {}
+    for line in hashed_lock.splitlines():
+        if line.strip() and not line.startswith("#"):
+            entry = re.fullmatch(r"([^=]+)==(\S+) --hash=sha256:[a-f0-9]{64}", line)
+            ensure(entry and entry[1] not in locked, "Invalid or duplicate Windows wheel lock entry")
+            locked[entry[1]] = entry[2]
+    ensure(locked == expected, "The Windows wheel hash lock disagrees with the version lock")
     for name, version in expected.items():
         ensure(metadata.version(name) == version, f"Unexpected dependency version: {name}")
     subprocess.run([sys.executable, "-m", "pip", "check"], check=True)

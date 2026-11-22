@@ -74,9 +74,25 @@ Qt 官方 SDK 归档仅用于工程替换测试。交付时仍须为实际发布
 
 仓库 `release-compliance/` 集中保留替换步骤、审查状态、逐文件基线、四份源码的摘要及 GPLv3 与 LGPLv3 全文。发布检查需要工程和法律审核结论，并核对相关清单的摘要。未补全的版权和独立许可、实际 wheel 编译配置和补丁、Mesa/OpenGL 与编解码器对应关系，以及 GPLv3 §6 和 LGPLv3 §4 的具体适用方式仍是阻塞。既有用户软件许可沿用原状态。
 
+## wheel 和源码对应证据
+
+- 用官方 Windows x64 wheel 重新比对旧冻结包的原生清单。115 个原生文件中，35 个可与 PySide6 Essentials 6.12.0 或 shiboken6 6.12.0 wheel 成员逐字节对应，具体成员路径见 `release-compliance/inventory.json`。其余文件包含 CPython、编译器运行库和本应用 EXE 等，应分别核对来源。
+- wheel 的 `PySide6/_config.py` 报告构建时间为 2026-10-05T13:28:34Z，`shiboken6/_config.py` 为 2026-10-05T13:28:25Z。实际导入报告三个组件均为 6.12.0，Qt 为 x86_64、MSVC 2022、动态链接的 Release 构建。Python limited API 输出显示绑定以 3.14.3 构建，在隔离的 3.12.16 运行。
+- 官方 `pyside-setup` 归档包含 `dependencies.yaml`、`coin/product_dependencies.yaml`、`coin/instructions/execute_build_instructions.yaml` 和 `coin/instructions/execute_desktop_instructions.yaml`。这些是上游构建配方。仍缺实际构建任务日志及源提交、各 Qt 模块的生效配置或 CMake 缓存、所用 Windows SDK 与 Clang/LLVM 版本，以及 wheel 生成时应用的所有补丁或上游确认无额外补丁的证据。wheel 中的版本文件给出发行版本，未据此认定准确的 Git 提交。
+- 四份已核验归档覆盖 QtBase、QtSvg、QtImageFormats、PySide6 和 shiboken6 的已辨明上游源码。软件 OpenGL 为单独输入。具体编解码器选择及编译配置仍需结合构建证据核实。已保存从源码归档原样提取的对应版权归属与许可文件。
+
+## 需要人工法律复核的问题
+
+1. 核对 LGPLv3 §4(d)(1) 的共享库机制是否适用于最终交付的全部 LGPL 组件，包括 PySide6、shiboken6、Qt 插件及其 ABI 配套文件。若某组件需走 §4(d)(0)，明确提供哪些可重新组合材料。
+2. 核定 LGPLv3 §4(e) 与 GPLv3 §6 的安装信息适用范围，确认最终安装和运行的权限、签名策略及文档是否允许用户实际运行修改版。
+3. 核对安装条款和使用说明是否允许为调试 LGPL 组件修改而进行的逆向工程。检查告知位置、版权署名、许可证正文和第三方许可条件。
+4. 核定源码 ZIP 与二进制同位置交付的持续可用性、对应源码的覆盖范围，以及编解码器、Mesa/LLVM 和 Microsoft 运行库的独立条款。待取得实际构建结果后按版本逐项签核。
+
 - [Qt LGPL 使用义务](https://www.qt.io/development/open-source-lgpl-obligations)
 - [Qt 6.12.0 官方 Windows x64 SDK](https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_6120/qt6_6120_msvc2022_64/qt.qt6.6120.win64_msvc2022_64/)
 - [Qt 源码官方下载](https://www.qt.io/development/download-open-source)
 - [Qt 6.12.0 模块源码](https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/)
 - [Qt for Python 6.12.0 源码](https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.12.0-src/)
 - [GNU LGPLv3 条文](https://www.gnu.org/licenses/lgpl-3.0.html)
+
+内部验证载荷的 10 份 VC 运行库及其授权缺口见 [MSVC 再分发审查](MSVC_REDISTRIBUTION_AUDIT.md)。最终载荷须重新核对来源、加载路径和部署权限。

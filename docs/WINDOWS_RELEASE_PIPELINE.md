@@ -20,9 +20,18 @@ pwsh -NoProfile -File .\packaging\build.ps1 `
   -Sources 'D:\ReleaseSources\IP-Sentinel-v1.2.0'
 ```
 
-脚本使用独立目录和虚拟环境，按 `release-lock.txt` 安装固定版本的 Windows wheel，并执行 pip 一致性检查。依赖锁固定版本，尚未固定每个 wheel 的摘要。对于跨主机的完全可重现构建，仍需提供经审核的 wheelhouse 和逐 wheel 哈希。
+脚本使用独立目录和虚拟环境，通过 `pip --require-hashes` 安装 `release-lock-cp312-win_amd64.txt` 中固定的 Windows x64／CPython 3.12 wheel，并验证哈希锁与 `release-lock.txt` 的版本一致。锁包含适用的纯 Python wheel 和 Windows x64 二进制 wheel。采用其他 Python 次版本前，须生成并审查对应平台与 ABI 的锁，同时更新流水线并验证 PyInstaller、PySide6 及原生组件，不能直接复用 3.12 锁。
+
+在 Windows 的空 wheelhouse 中按以下流程重建哈希锁。生成器核对每个归档与 PyPI 官方发行记录，拒绝撤回的 wheel、未允许的平台标签、重复或缺失的依赖。生成后比较 Git 差异，核实每个变化的发布文件来源。
+
+```powershell
+python -m pip --isolated download --index-url https://pypi.org/simple --only-binary=:all: --no-deps --platform win_amd64 --implementation cp --python-version 3.12 --abi cp312 --dest .\wheelhouse -r .\packaging\release-lock.txt
+python .\packaging\lock_windows_wheels.py .\wheelhouse --output .\packaging\release-lock-cp312-win_amd64.txt
+```
 
 每次运行会打印独立目录，默认在 `.build-tools/release-runs/`。JSON 和 Markdown 报告位于该目录的 `reports/`；通过的产物位于 `source/release/`。运行时或任一必需阶段失败会返回非零。Gitleaks 加上自查规则可发现常见凭据和数据库特征，不能替代对最终安装内容的解包、安装与人工核对。源码 ZIP 校验基于已核对的输入归档及最终 SHA-256；现有扫描不递归检查内部 tar.xz。流水线不执行 GitHub 操作。
+
+虚拟环境位于仓库下较短的 `.build-tools/w-<运行标识>`，避免 Qt wheel 的深层 QML 路径触及旧 Windows 路径限制。仓库路径很深且系统仍强制旧限制时，在短路径工作区执行。
 
 ## 正式发布前的剩余实测
 
@@ -30,3 +39,5 @@ pwsh -NoProfile -File .\packaging\build.ps1 `
 
 - [OpenSSL 3.5 安全公告](https://openssl-library.org/news/vulnerabilities-3.5/)
 - [OpenSSL 官方下载](https://openssl-library.org/source/)
+
+内部验证载荷的 10 份 VC 运行库及其授权缺口见 [MSVC 再分发审查](MSVC_REDISTRIBUTION_AUDIT.md)。最终载荷须重新核对来源、加载路径和部署权限。

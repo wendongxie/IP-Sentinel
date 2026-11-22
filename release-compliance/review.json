@@ -1,6 +1,6 @@
 {
-  "native_inventory": {"status": "NEEDS_REVIEW", "evidence": "Match the final native files and hashes."},
-  "corresponding_source": {"status": "NEEDS_REVIEW", "evidence": "Wheel build configuration, patches and Mesa correspondence remain open."},
-  "third_party_notices": {"status": "NEEDS_REVIEW", "evidence": "Confirm codec and redistributable runtime notices against the final binaries."},
+  "native_inventory": {"status": "NEEDS_REVIEW", "evidence": "115 baseline files matched to recorded build inputs. 43 matched official wheels, 30 have a source family and 42 UCRT/API Set files lack original package provenance. Reconcile the final native inventory."},
+  "corresponding_source": {"status": "NEEDS_REVIEW", "evidence": "Four Qt source archives and upstream recipes recovered. Exact wheel build configuration, applied patches and Mesa/LLVM correspondence remain open."},
+  "third_party_notices": {"status": "NEEDS_REVIEW", "evidence": "Upstream codec attributions and license texts collected. Confirm actual linked libraries and redistributable runtime notices against final binaries."},
   "lgpl_distribution": {"status": "NEEDS_REVIEW", "evidence": "Professional review of source delivery, recipient terms and installation information remains open."}
 }

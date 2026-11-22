@@ -3,6 +3,7 @@
 
 from pathlib import Path
 import re
+import sys
 import _ssl
 import ssl
 
@@ -55,11 +56,22 @@ def uses_system_icu(entry):
 # _ssl.pyd and OpenSSL must come from the same Python installation.
 openssl_dir = Path(_ssl.__file__).parent
 openssl_names = {"libcrypto-3-x64.dll", "libssl-3-x64.dll"}
+system_contracts = set((root / "packaging/windows-system-contracts.txt").read_text("ascii").splitlines())
 bundled_binaries = []
 for entry in a.binaries:
     if uses_system_icu(entry):
         continue
     name = Path(entry[0]).name.lower()
+    # The minimum supported OS is Windows 10 1809. Resolve these contracts
+    # through Windows, including when a developer's PATH contains SDK copies.
+    if name in system_contracts:
+        continue
+    source = Path(entry[1]).resolve()
+    if source.suffix.lower() in {".dll", ".pyd"} and not any(
+        source.is_relative_to(Path(prefix).resolve())
+        for prefix in (sys.prefix, sys.base_prefix)
+    ):
+        raise RuntimeError(f"Unexpected native dependency outside build Python: {source}")
     if name in openssl_names:
         matching_dll = openssl_dir / name
         if not matching_dll.is_file():

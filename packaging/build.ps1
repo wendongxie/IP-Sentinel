@@ -31,15 +31,26 @@ if (!$Sources) { throw "Provide -Sources with the verified corresponding-source 
 $Sources = (Resolve-Path -LiteralPath $Sources).Path
 $compiler = (Get-Command $Iscc -CommandType Application).Source
 $scanner = (Get-Command $Gitleaks -CommandType Application).Source
-$environment = Join-Path $run "venv"
+# Qt wheels contain nested QML build files. Keep the install root short on hosts
+# that enforce MAX_PATH, independently of where reports and outputs are stored.
+$environment = Join-Path $repository (".build-tools/w-" + (Split-Path $run -Leaf).Substring(0, 8))
+if (Test-Path -LiteralPath $environment) { throw "Build environment already exists: $environment" }
 Invoke-Checked $pythonExe @("-I", "-m", "venv", $environment)
 $buildPython = Join-Path $environment "Scripts/python.exe"
 
 Push-Location $source
 try {
-    Invoke-Checked $buildPython @("-I", "-m", "pip", "--isolated", "install", "--only-binary=:all:", "-r", "packaging/release-lock.txt")
+    Invoke-Checked $buildPython @("-I", "-m", "pip", "--isolated", "install", "--index-url", "https://pypi.org/simple", "--only-binary=:all:", "--require-hashes", "-r", "packaging/release-lock-cp312-win_amd64.txt")
     Invoke-Checked $buildPython @("-I", "packaging/release_check.py", "pre", "--report", "$reports/pre", "--sources", $Sources, "--gitleaks", $scanner)
-    Invoke-Checked $buildPython @("-I", "-m", "PyInstaller", "--noconfirm", "--clean", "packaging/IP Sentinel.spec")
+    $originalPath, $originalTemp, $originalTmp = $env:PATH, $env:TEMP, $env:TMP
+    try {
+        $env:PATH = "$(Split-Path $buildPython);$env:SystemRoot\System32;$env:SystemRoot"
+        $env:TEMP = (New-Item -ItemType Directory -Path (Join-Path $run "freeze-temp")).FullName
+        $env:TMP = $env:TEMP
+        Invoke-Checked $buildPython @("-I", "-m", "PyInstaller", "--noconfirm", "--clean", "packaging/IP Sentinel.spec")
+    } finally {
+        $env:PATH, $env:TEMP, $env:TMP = $originalPath, $originalTemp, $originalTmp
+    }
 
     $policy = Get-Content packaging/release-policy.json -Raw | ConvertFrom-Json
     $version = $policy.version

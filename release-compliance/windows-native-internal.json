@@ -1,0 +1,784 @@
+{
+  "scope": "Internal Win10 dependency validation only; OpenSSL 3.5.9",
+  "components": [
+    {
+      "path": "_internal/_asyncio.pyd",
+      "sha256": "df6fc1480c3e458e4dc663c015ea3a45803f891c8a5e2812ed0252a6a0859e48",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_asyncio.pyd"
+    },
+    {
+      "path": "_internal/_bz2.pyd",
+      "sha256": "ff7ac29903649e9d09246b566ddf999e8051e8bc957abdcec5c525a7b30c4111",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_bz2.pyd"
+    },
+    {
+      "path": "_internal/_ctypes.pyd",
+      "sha256": "8bf63e92438fdb176a2364093aac4ac4a31772e79fd11a3a5057d986582d0e61",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_ctypes.pyd"
+    },
+    {
+      "path": "_internal/_decimal.pyd",
+      "sha256": "985ec026c0ded12aa276b617c12fbc2560f76a8a89d4f3c7c6f1dad53e8336e0",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_decimal.pyd"
+    },
+    {
+      "path": "_internal/_hashlib.pyd",
+      "sha256": "5f50d7344c7f977a1dfbdfdcd0f5cd4831209ccbecff9b932670a51e10116732",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_hashlib.pyd"
+    },
+    {
+      "path": "_internal/_lzma.pyd",
+      "sha256": "91326bcdae6de269dc4adbc9807a879b4cebf50f850a2363463d6b17b6d539b2",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_lzma.pyd"
+    },
+    {
+      "path": "_internal/_multiprocessing.pyd",
+      "sha256": "284f3bee0f394c4c85006e0b12d4fedb47fc070328f751e85ee29f3ce5d6c5a6",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_multiprocessing.pyd"
+    },
+    {
+      "path": "_internal/_overlapped.pyd",
+      "sha256": "a5e9750f042fc12ad2f3c01d3d78ce13b8b37a10c53d9c7ab863b085e95a6106",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_overlapped.pyd"
+    },
+    {
+      "path": "_internal/_queue.pyd",
+      "sha256": "b1c1683559743ca2a38a426d2b208ee65d4bb8d0dafa3b78317baff7ac1d20db",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_queue.pyd"
+    },
+    {
+      "path": "_internal/_socket.pyd",
+      "sha256": "763b6ed36b3475106e0a510f024a471b866672b5e9734633ccb04fdf4a966bd9",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_socket.pyd"
+    },
+    {
+      "path": "_internal/_sqlite3.pyd",
+      "sha256": "128799e10f4261dd69dbe316e33bf30cdc7f44bb07f882b00a67fc1d263cdfd7",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_sqlite3.pyd"
+    },
+    {
+      "path": "_internal/_ssl.pyd",
+      "sha256": "377759973d7c68dd112436606c4a8daee556cc2adb16432c4397fa7415395fac",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_ssl.pyd"
+    },
+    {
+      "path": "_internal/_uuid.pyd",
+      "sha256": "812d432695df44fde954ac5d0cb1e7f5d294301fd7bba704a8d7817f8901cefd",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_uuid.pyd"
+    },
+    {
+      "path": "_internal/_wmi.pyd",
+      "sha256": "3b45196b97e09a2ff4bfa877174bcdeba3848a527a357aa2ea5eb55a38c51419",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_wmi.pyd"
+    },
+    {
+      "path": "_internal/_zoneinfo.pyd",
+      "sha256": "e017f92b8846f1426a050a6e16a30b2554eaa8b94b483a166664c0b62f1389bc",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/_zoneinfo.pyd"
+    },
+    {
+      "path": "_internal/libcrypto-3-x64.dll",
+      "sha256": "ce985a87cef2684b0ad54f6dc9c2d28d603a76e0c312cce13bc851603caaff60",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/libcrypto-3-x64.dll"
+    },
+    {
+      "path": "_internal/libffi-8.dll",
+      "sha256": "0f6efcceab5949720114ab45511c7226dc02303b57d223968b0ad5310f96d41f",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/libffi-8.dll"
+    },
+    {
+      "path": "_internal/libssl-3-x64.dll",
+      "sha256": "faed363d6e87d3b4456cf3c812496f4826682de01a6df0bbe5c8ca74feaf64a6",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/libssl-3-x64.dll"
+    },
+    {
+      "path": "_internal/pyexpat.pyd",
+      "sha256": "f9632aebdc07528c280be04ff350056d28fd0ce2cd967f37893081b71181678c",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/pyexpat.pyd"
+    },
+    {
+      "path": "_internal/PySide6/MSVCP140.dll",
+      "sha256": "f6f1d55bfd64027820ddce48f9cd8cf46d53bfa34047e6acf4ef348d492a05cb",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/msvcp140.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/MSVCP140.dll"
+    },
+    {
+      "path": "_internal/PySide6/MSVCP140_1.dll",
+      "sha256": "2be87527c41e1ba8aff48e326e0adcd4743516e0bbcc9304986c726e27de6aca",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/msvcp140_1.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/MSVCP140_1.dll"
+    },
+    {
+      "path": "_internal/PySide6/MSVCP140_2.dll",
+      "sha256": "6a72ed8a87eae1671640bd1ca98eccb989f1772ae46ab84594e385bf6d4ac4fb",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/msvcp140_2.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/MSVCP140_2.dll"
+    },
+    {
+      "path": "_internal/PySide6/opengl32sw.dll",
+      "sha256": "18aedc7a4b610f53bcc7b7a5c5ed9293c7e86f030e3273ad54ed3bb1ebd36702",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/opengl32sw.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/opengl32sw.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/generic/qtuiotouchplugin.dll",
+      "sha256": "8565656807db29cfb6170e6803181f24e0bed3aa1b14684d29694e375cc5ee96",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/generic/qtuiotouchplugin.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/generic/qtuiotouchplugin.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/iconengines/qsvgicon.dll",
+      "sha256": "f9e21af351bd5d5629bc00e8e3796b552eca92d1a9645438c865b9c53af1714f",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/iconengines/qsvgicon.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/iconengines/qsvgicon.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qgif.dll",
+      "sha256": "77782de4aa4f7b75a7cc4d3f24aee49da935c312ea13d25f4cda3a98d180145c",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qgif.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qgif.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qicns.dll",
+      "sha256": "93e2e588cd1036af3c6300b539d648b3825625788e59a3f0f1863d9901c9759f",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qicns.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qicns.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qico.dll",
+      "sha256": "a0e4d0d0319e075f6cc5f774084bf390f7af83600f38685c6bc9c407681cc22c",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qico.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qico.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qjpeg.dll",
+      "sha256": "dd42bdcd229744a9515db82ba9a802c74b6589cc508c3e85fb30f06ba24b9da6",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qjpeg.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qjpeg.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qsvg.dll",
+      "sha256": "b63f97ed0ae60aa5bc332c37e429c1f31154e1eee358352b2c49598c5269843b",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qsvg.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qsvg.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qtga.dll",
+      "sha256": "ce95aa019d940533341b4f08a10ddd3b0393162678c47904251da77aeadfd34e",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qtga.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qtga.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qtiff.dll",
+      "sha256": "ce696a2dd2e57b8852f7d01834725f54a4d0be66c3d2c491df60fd907fece907",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qtiff.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qtiff.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qwbmp.dll",
+      "sha256": "e118243bd3528aa5fe6378a8839abe0efc200e891af06ee369b97b2ff239b89c",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qwbmp.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qwbmp.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/imageformats/qwebp.dll",
+      "sha256": "02ae5555b688f78aade5cedcd66c646b73d519460c008c23e75ad408bd152668",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/imageformats/qwebp.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/imageformats/qwebp.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/networkinformation/qnetworklistmanager.dll",
+      "sha256": "2bd047476183c76004221fb44adb7ada9b4b6ce5c2929d63ff67a5305b430f1a",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/networkinformation/qnetworklistmanager.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/networkinformation/qnetworklistmanager.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/platforms/qdirect2d.dll",
+      "sha256": "18213464be5a5a1d39af6a2c876ce21a6bb6a634c814651d09f0ef7e4719edc2",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/platforms/qdirect2d.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/platforms/qdirect2d.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/platforms/qminimal.dll",
+      "sha256": "c9025bc5f4653c5aadac87f06ab391763e82adf792f6759c6027a78a5efcaf5c",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/platforms/qminimal.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/platforms/qminimal.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/platforms/qoffscreen.dll",
+      "sha256": "d24ef380ab0882d39f21539dcf57ab4213875a6fc658a53012f2d2fd275c6f69",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/platforms/qoffscreen.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/platforms/qoffscreen.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/platforms/qwindows.dll",
+      "sha256": "ddd5cf6a96f058cfafcbc901ddeb5df010d755f0716beacfb557f8b27b733afe",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/platforms/qwindows.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/platforms/qwindows.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/styles/qmodernwindowsstyle.dll",
+      "sha256": "74d4c47b56a942afb3723bb105900501bb8f91a46a8b592fa722cc4fdb2ce9bf",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/styles/qmodernwindowsstyle.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/styles/qmodernwindowsstyle.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/tls/qcertonlybackend.dll",
+      "sha256": "87574d467b6f9640a15e37bf4183179c6a7cefc4dc84346b8f4cffb989cf1e12",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/tls/qcertonlybackend.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/tls/qcertonlybackend.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/tls/qopensslbackend.dll",
+      "sha256": "94b3492bc4087da2818e2749a5a03f7d810611b2e3648bd8d580ad087363046f",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/tls/qopensslbackend.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/tls/qopensslbackend.dll"
+    },
+    {
+      "path": "_internal/PySide6/plugins/tls/qschannelbackend.dll",
+      "sha256": "2915a86a2531e65fd4905f0cc1c8dc353772a4f52aeda5100725dd9249db54d1",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/plugins/tls/qschannelbackend.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/plugins/tls/qschannelbackend.dll"
+    },
+    {
+      "path": "_internal/PySide6/pyside6.abi3.dll",
+      "sha256": "d5b87ccb0a7c305854bd120242b0a75002d0b50a35532d0f6171e4ed0f3cc82a",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/pyside6.abi3.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/pyside6.abi3.dll"
+    },
+    {
+      "path": "_internal/PySide6/Qt6Core.dll",
+      "sha256": "f57ed38afd95d0306cca9d88d997f639f70c7628a4f1f064eae291d579487121",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/Qt6Core.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/Qt6Core.dll"
+    },
+    {
+      "path": "_internal/PySide6/Qt6Gui.dll",
+      "sha256": "abd20026e190e8cc69667d1bea042db05cd353cc05e7da74b063c20b7da3f6cd",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/Qt6Gui.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/Qt6Gui.dll"
+    },
+    {
+      "path": "_internal/PySide6/Qt6Network.dll",
+      "sha256": "1c7c393b264ae78f4dee211656377a086c4be714bf768d3135f94f11c1d0be61",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/Qt6Network.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/Qt6Network.dll"
+    },
+    {
+      "path": "_internal/PySide6/Qt6Svg.dll",
+      "sha256": "8f1de5b28aab1eedb415c751c81f9cfaa2804242868c0ceea5f3fdb4b2babca4",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/Qt6Svg.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/Qt6Svg.dll"
+    },
+    {
+      "path": "_internal/PySide6/Qt6Widgets.dll",
+      "sha256": "2f62cbe2869fff4e20df7369c2786e1ec7ec290d5a63d1371b7f70cf06909c3f",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/Qt6Widgets.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/Qt6Widgets.dll"
+    },
+    {
+      "path": "_internal/PySide6/QtCore.pyd",
+      "sha256": "6486f6f0a2fec42fc8c652c0b76bb3ad0d44eaccad9c72e577116a075681eebb",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/QtCore.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/QtCore.pyd"
+    },
+    {
+      "path": "_internal/PySide6/QtGui.pyd",
+      "sha256": "9ac544d1bcf8a26c408c63090d05506f8382d5378ee3a204e29a3ac5449c5b2b",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/QtGui.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/QtGui.pyd"
+    },
+    {
+      "path": "_internal/PySide6/QtNetwork.pyd",
+      "sha256": "22bffdb2a431b5a986de255f7eb0fcd1fd7d9e85c53967978e2ab479b33a13c5",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/QtNetwork.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/QtNetwork.pyd"
+    },
+    {
+      "path": "_internal/PySide6/QtWidgets.pyd",
+      "sha256": "a8e323e56a93c1a8a70981c36a409c0a2546e7a08da5be8ca4e03dfd27febc2a",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/QtWidgets.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/QtWidgets.pyd"
+    },
+    {
+      "path": "_internal/PySide6/VCRUNTIME140.dll",
+      "sha256": "a36e0cb185eb89533ed96d4568138f86a1315756a8b2644c5963a8ce23e32101",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/vcruntime140.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/VCRUNTIME140.dll"
+    },
+    {
+      "path": "_internal/PySide6/VCRUNTIME140_1.dll",
+      "sha256": "302b1e160e858602490a55e32ae2e29ddfc0bec2a188e19550cb655cdaa58f9c",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "pyside6_essentials-6.12.0-cp310-abi3-win_amd64.whl",
+        "PySide6/vcruntime140_1.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/PySide6/VCRUNTIME140_1.dll"
+    },
+    {
+      "path": "_internal/python3.dll",
+      "sha256": "db0c6c1efa44cd83ec6d97825cba36bc98e25d962df53ea6995a49b4d068e9f7",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/python3.dll"
+    },
+    {
+      "path": "_internal/python312.dll",
+      "sha256": "659761ee44cb66968b7ef15570a021beed8181c11e9c81dec53e4851a58f549f",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/python312.dll"
+    },
+    {
+      "path": "_internal/select.pyd",
+      "sha256": "5a1eef8728f20607d9b1243717445682f170ac02291a3eaf04ea6992f14ae25d",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/select.pyd"
+    },
+    {
+      "path": "_internal/shiboken6/MSVCP140.dll",
+      "sha256": "1ba4d7c0a95d375da138a057a57593b33510ad5bda6c5e2686afd68faa5b4231",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "shiboken6-6.12.0-cp310-abi3-win_amd64.whl",
+        "shiboken6/msvcp140.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/shiboken6/MSVCP140.dll"
+    },
+    {
+      "path": "_internal/shiboken6/Shiboken.pyd",
+      "sha256": "8ccf415b2cefb5b6462504581ab1993fb41afe04e415931d8a72049f1c79b267",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "shiboken6-6.12.0-cp310-abi3-win_amd64.whl",
+        "shiboken6/Shiboken.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/shiboken6/Shiboken.pyd"
+    },
+    {
+      "path": "_internal/shiboken6/shiboken6.abi3.dll",
+      "sha256": "07c318c02be5a3a9f1475f5a2d0cd438f4d4ea3288c28e2e10bc5ebbbec8de86",
+      "group": "Qt/PySide6 wheel",
+      "wheel": [
+        "shiboken6-6.12.0-cp310-abi3-win_amd64.whl",
+        "shiboken6/shiboken6.abi3.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/shiboken6/shiboken6.abi3.dll"
+    },
+    {
+      "path": "_internal/shiboken6/VCRUNTIME140.dll",
+      "sha256": "e7be9112ee9a5b9f44b44bff24cb761cca9b1ed7550b612f77b70edfcf5fdabf",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "shiboken6-6.12.0-cp310-abi3-win_amd64.whl",
+        "shiboken6/vcruntime140.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/shiboken6/VCRUNTIME140.dll"
+    },
+    {
+      "path": "_internal/shiboken6/VCRUNTIME140_1.dll",
+      "sha256": "f02cd4a862b85a9a3153d27e15e5a213f5df8e3d77004ed2e87b8a7e8873d97c",
+      "group": "Microsoft VC runtime",
+      "wheel": [
+        "shiboken6-6.12.0-cp310-abi3-win_amd64.whl",
+        "shiboken6/vcruntime140_1.dll"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/shiboken6/VCRUNTIME140_1.dll"
+    },
+    {
+      "path": "_internal/sqlalchemy/engine/_processors_cy.cp312-win_amd64.pyd",
+      "sha256": "1248bb8ff9b4f39dc1312d9b43207d40e50948d7d676e1af80aa42d2819b3cfe",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/engine/_processors_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/engine/_processors_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/engine/_result_cy.cp312-win_amd64.pyd",
+      "sha256": "4bfa33e06e91bb2c7ad8ccd739929e44a1e4918d8733fd3228ad9879954dec52",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/engine/_result_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/engine/_result_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/engine/_row_cy.cp312-win_amd64.pyd",
+      "sha256": "c82acf2a3c27cd001a4e8dd5621785a8997a434df68ed2dd9b8e90038ab36e72",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/engine/_row_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/engine/_row_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/engine/_util_cy.cp312-win_amd64.pyd",
+      "sha256": "e79c897eba3a5b3a5574426d089d74cc9096744f11c2c3c1a71ae6c76f59d064",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/engine/_util_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/engine/_util_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/sql/_cache_key_cy.cp312-win_amd64.pyd",
+      "sha256": "37d165bb7b1d8d075b295fde89d23a26361a3de4c0a23c3530e8fd7afbc33100",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/sql/_cache_key_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/sql/_cache_key_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/sql/_util_cy.cp312-win_amd64.pyd",
+      "sha256": "d740c7d6a5196f0ce7bf1d64bb1080a5259efb917243714c0c9c22138f5a7e7f",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/sql/_util_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/sql/_util_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/util/_collections_cy.cp312-win_amd64.pyd",
+      "sha256": "caf9b72848a4ab9dccdcb635fe5a8cc9d8659ef7b7e16cdc6a95eb3fb5a99106",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/util/_collections_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/util/_collections_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlalchemy/util/_immutabledict_cy.cp312-win_amd64.pyd",
+      "sha256": "7dfa02421e98a0dd5b812e844d7d34e7e3e6413616ec1dbae52d2205874bc898",
+      "group": "Other official wheel",
+      "wheel": [
+        "sqlalchemy-2.1.9-cp312-cp312-win_amd64.whl",
+        "sqlalchemy/util/_immutabledict_cy.cp312-win_amd64.pyd"
+      ],
+      "build_input": "isolated-venv/Lib/site-packages/sqlalchemy/util/_immutabledict_cy.cp312-win_amd64.pyd"
+    },
+    {
+      "path": "_internal/sqlite3.dll",
+      "sha256": "4d580c0506616ac7129aca13cfdfe204119831cf83e57dbacec23b3dba40ab7c",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/sqlite3.dll"
+    },
+    {
+      "path": "_internal/unicodedata.pyd",
+      "sha256": "a0ac8eb4f952bec73e24c9a4a5f8d1752d0f914162d66dc77eda7cd363a77723",
+      "group": "Python runtime or third-party dependency",
+      "wheel": null,
+      "build_input": "base-python/DLLs/unicodedata.pyd"
+    },
+    {
+      "path": "_internal/VCRUNTIME140.dll",
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "group": "Microsoft VC runtime",
+      "wheel": null,
+      "build_input": "base-python/VCRUNTIME140.dll"
+    },
+    {
+      "path": "_internal/VCRUNTIME140_1.dll",
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+      "group": "Microsoft VC runtime",
+      "wheel": null,
+      "build_input": "base-python/VCRUNTIME140_1.dll"
+    },
+    {
+      "path": "IP Sentinel.exe",
+      "sha256": "14bbac06952fc0b7c1b1eac020f016cd722f04d363c4d4b5055cc90303fe56c5",
+      "group": "Project executable",
+      "wheel": null,
+      "build_input": "internal-build/build/IP Sentinel/IP Sentinel.exe"
+    }
+  ],
+  "removed": [
+    "_internal/MSVCP140.dll",
+    "_internal/MSVCP140_1.dll",
+    "_internal/MSVCP140_2.dll",
+    "_internal/Qt6Core.dll",
+    "_internal/Qt6Gui.dll",
+    "_internal/Qt6Network.dll",
+    "_internal/Qt6Svg.dll",
+    "_internal/Qt6Widgets.dll",
+    "_internal/_cffi_backend.cp312-win_amd64.pyd",
+    "_internal/api-ms-win-core-console-l1-1-0.dll",
+    "_internal/api-ms-win-core-datetime-l1-1-0.dll",
+    "_internal/api-ms-win-core-debug-l1-1-0.dll",
+    "_internal/api-ms-win-core-errorhandling-l1-1-0.dll",
+    "_internal/api-ms-win-core-fibers-l1-1-0.dll",
+    "_internal/api-ms-win-core-fibers-l1-1-1.dll",
+    "_internal/api-ms-win-core-file-l1-1-0.dll",
+    "_internal/api-ms-win-core-file-l1-2-0.dll",
+    "_internal/api-ms-win-core-file-l2-1-0.dll",
+    "_internal/api-ms-win-core-handle-l1-1-0.dll",
+    "_internal/api-ms-win-core-heap-l1-1-0.dll",
+    "_internal/api-ms-win-core-interlocked-l1-1-0.dll",
+    "_internal/api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+    "_internal/api-ms-win-core-libraryloader-l1-1-0.dll",
+    "_internal/api-ms-win-core-localization-l1-2-0.dll",
+    "_internal/api-ms-win-core-memory-l1-1-0.dll",
+    "_internal/api-ms-win-core-namedpipe-l1-1-0.dll",
+    "_internal/api-ms-win-core-processenvironment-l1-1-0.dll",
+    "_internal/api-ms-win-core-processthreads-l1-1-0.dll",
+    "_internal/api-ms-win-core-processthreads-l1-1-1.dll",
+    "_internal/api-ms-win-core-profile-l1-1-0.dll",
+    "_internal/api-ms-win-core-rtlsupport-l1-1-0.dll",
+    "_internal/api-ms-win-core-string-l1-1-0.dll",
+    "_internal/api-ms-win-core-synch-l1-1-0.dll",
+    "_internal/api-ms-win-core-synch-l1-2-0.dll",
+    "_internal/api-ms-win-core-sysinfo-l1-1-0.dll",
+    "_internal/api-ms-win-core-sysinfo-l1-2-0.dll",
+    "_internal/api-ms-win-core-timezone-l1-1-0.dll",
+    "_internal/api-ms-win-core-util-l1-1-0.dll",
+    "_internal/api-ms-win-crt-conio-l1-1-0.dll",
+    "_internal/api-ms-win-crt-convert-l1-1-0.dll",
+    "_internal/api-ms-win-crt-environment-l1-1-0.dll",
+    "_internal/api-ms-win-crt-filesystem-l1-1-0.dll",
+    "_internal/api-ms-win-crt-heap-l1-1-0.dll",
+    "_internal/api-ms-win-crt-locale-l1-1-0.dll",
+    "_internal/api-ms-win-crt-math-l1-1-0.dll",
+    "_internal/api-ms-win-crt-process-l1-1-0.dll",
+    "_internal/api-ms-win-crt-runtime-l1-1-0.dll",
+    "_internal/api-ms-win-crt-stdio-l1-1-0.dll",
+    "_internal/api-ms-win-crt-string-l1-1-0.dll",
+    "_internal/api-ms-win-crt-time-l1-1-0.dll",
+    "_internal/api-ms-win-crt-utility-l1-1-0.dll",
+    "_internal/pyside6.abi3.dll",
+    "_internal/shiboken6.abi3.dll",
+    "_internal/ucrtbase.dll"
+  ],
+  "added": [
+    "_internal/PySide6/MSVCP140.dll",
+    "_internal/PySide6/MSVCP140_1.dll",
+    "_internal/PySide6/MSVCP140_2.dll",
+    "_internal/PySide6/Qt6Core.dll",
+    "_internal/PySide6/Qt6Gui.dll",
+    "_internal/PySide6/Qt6Network.dll",
+    "_internal/PySide6/Qt6Svg.dll",
+    "_internal/PySide6/Qt6Widgets.dll",
+    "_internal/PySide6/VCRUNTIME140.dll",
+    "_internal/PySide6/VCRUNTIME140_1.dll",
+    "_internal/PySide6/pyside6.abi3.dll",
+    "_internal/shiboken6/MSVCP140.dll",
+    "_internal/shiboken6/VCRUNTIME140.dll",
+    "_internal/shiboken6/VCRUNTIME140_1.dll",
+    "_internal/shiboken6/shiboken6.abi3.dll"
+  ],
+  "changed": [
+    "IP Sentinel.exe",
+    "_internal/_asyncio.pyd",
+    "_internal/_bz2.pyd",
+    "_internal/_ctypes.pyd",
+    "_internal/_decimal.pyd",
+    "_internal/_hashlib.pyd",
+    "_internal/_lzma.pyd",
+    "_internal/_multiprocessing.pyd",
+    "_internal/_overlapped.pyd",
+    "_internal/_queue.pyd",
+    "_internal/_socket.pyd",
+    "_internal/_sqlite3.pyd",
+    "_internal/_ssl.pyd",
+    "_internal/_uuid.pyd",
+    "_internal/_wmi.pyd",
+    "_internal/_zoneinfo.pyd",
+    "_internal/libcrypto-3-x64.dll",
+    "_internal/libffi-8.dll",
+    "_internal/libssl-3-x64.dll",
+    "_internal/pyexpat.pyd",
+    "_internal/python3.dll",
+    "_internal/python312.dll",
+    "_internal/select.pyd",
+    "_internal/sqlite3.dll",
+    "_internal/unicodedata.pyd"
+  ]
+}
