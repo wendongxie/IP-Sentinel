@@ -8,8 +8,12 @@
 | OpenSSL | 3.5.8，由 Python 的 `ssl.OPENSSL_VERSION` 报告 | Apache License 2.0。发布时核对 SSL 实际加载的组件，随附对应版本的许可和声明。 |
 | PySide6 Essentials 与 shiboken6 | 6.12.0，含 Python Qt 绑定及 ABI DLL | 按 Qt for Python 社区发行的 LGPLv3 路径评估。分发前核对实际源文件、二进制构建选项和许可文本。 |
 | Qt | 6.12.0，含 Core、Gui、Network、Widgets、Svg 及插件 | 已核对冻结产物的插件清单及对应官方源码的 SPDX 标记。归档摘要、已提取许可文本的位置和待验证项见 [Qt LGPL 再分发审查](QT_LGPL_COMPLIANCE.md)。 |
+| 软件 OpenGL 组件 | `_internal/PySide6/opengl32sw.dll`，无 PE 文件版本 | Qt SDK 索引另列 Mesa 11.2.2 软件 OpenGL 归档。仅凭文件名及索引不足以确认实际二进制来源，应核对归档、文件指纹、构建选项和对应的许可证声明。 |
+| Microsoft 原生运行库 | `MSVCP140*.dll`、`VCRUNTIME140*.dll` 为 14.44.35211.0，`ucrtbase.dll` 及 API Set 转发 DLL 显示 10.0.26100.4654 | 需按实际构建工具链及 Microsoft 再分发清单核对来源与分发条款。 |
 
 这份清单仅覆盖本次两个发布阻塞涉及的组件。正式交付前需从新构建的文件清单补齐应用依赖、编译器运行库和各组件嵌入的第三方代码声明。
+
+逐文件基线、已提取的完整 GPLv3 与 LGPLv3 正文及独立源码交付索引见仓库的 `release-compliance/`。清单以旧冻结产物的相对路径和 SHA-256 为依据，其中待确认证据不会由自动化脚本判为通过。
 
 - [CPython 许可证](https://docs.python.org/3/license.html)
 - [OpenSSL 许可证](https://openssl-library.org/source/license/)

@@ -38,7 +38,9 @@ Qt 官方模块页面的 GPL 专用名单中未见上述五个 Qt 模块。下�
 
 退出测试副本后，将 `_internal/Qt6Core.dll` 移到备份文件，从 wheel 的 `PySide6/Qt6Core.dll` 复制替换文件到原路径。两个 DLL 的 SHA-256 均为 `f57ed38afd95d0306cca9d88d997f639f70c7628a4f1f064eae291d579487121`。以 Windows 平台插件运行 `IP Sentinel.exe --smoke-test`，返回码为 0。测试入口检查主窗口、两个页签、图标、托盘及单实例唤醒，并使用临时 SQLite 数据库。测试后恢复原 DLL，已复核恢复后的 SHA-256。
 
-这验证了目录式冻结产物允许在部署目录内更换同一构建的 DLL。仍需用不同的 ABI 兼容构建验证运行行为，并在最终安装版和便携版重复测试。正式用户数据和配置未参与验证。
+随后使用 Qt 官方 SDK 的 6.12.0 Windows x64 MSVC2022 QtBase 归档，归档 SHA-1 与官方索引的 `bf35f8916164c6f313af8347dd0e91efe18178f0` 一致，实测 SHA-256 为 `219d1b86def3be418e31d704572bc4acc91b2ec373c65595c9fb12b42bf098dc`。提取的 `Qt6Core.dll` Authenticode 检查为有效，SHA-256 为 `39175459c4837c8cc0f709a637fb6eadb25d696785109c8393559ec876f02703`，与原 DLL 不同。替换后窗口测试通过，恢复哈希与原始文件一致。证据覆盖该 DLL、Windows 10 和已测试的界面功能。正式用户数据和配置未参与验证。
+
+独立 AppId 的旧隔离安装器和旧便携 ZIP 也分别通过同一替换流程。安装、两种交付形态的窗口测试及隔离卸载返回码均为 0，两份 DLL 恢复后均通过原始 SHA-256 比对。旧包中的 `pyside6.abi3.dll`、`shiboken6.abi3.dll` 与 `PySide6/QtNetwork.pyd` 分别和本地固定 6.12.0 依赖目录中的对应文件进行 SHA-256 比对，三个文件均一致。
 
 ## 对应源码交付计划
 
@@ -56,9 +58,24 @@ Qt 官方目录已确认提供 6.12.0 的 `qtbase`、`qtsvg`、`qtimageformats` 
 
 计划将经过校验的对应源码、构建信息、补丁记录、适用的完整许可证和版权声明与实际二进制版本绑定，并从与二进制同等可访问的位置提供源码。按 LGPLv3 第 4(d)(1) 条验证合适的共享库机制，包括可使用接口兼容的修改版。若采用第 4(d)(0) 条的重新组合路径，另行确认最小对应源码、可重新组合的应用代码及 GNU GPLv3 第 6 条交付条件。安装信息仅在第 4(e) 条适用时判定仍需提供哪些内容。最终许可条款、安装信息和源码覆盖须人工专业复核。
 
-当前已确认独立 DLL 布局及同构建替换流程，源码交付和不同构建替换仍为阻塞。
+## 合规收尾清单
+
+| 事项 | 工程结果 |
+| --- | --- |
+| 用户自行更换、运行修改版 | Qt 库在 PyInstaller 输出的 `_internal/` 中独立交付。Inno Setup 默认按用户身份安装到 `%LOCALAPPDATA%\Programs\IP Sentinel`。便携副本应放在用户有写权限的位置。 |
+| 用户操作 | 退出软件，将目标 DLL 备份到部署树外，复制可信 Windows x64、同 ABI 的构建到原路径，再启动并检查窗口、托盘与实际使用功能。失败时退出并恢复备份。升级后检查修改是否被安装程序覆盖。 |
+| LGPLv3 §4(d)(1) | 已验证一个来自独立构建的 Qt DLL 能替换并运行。最终交付需复核更多相关组件、适用的运行条件及发行条款。 |
+| LGPLv3 §4(d)(0) | 作为替代分发路径评估。若改用该条，需要提供对应源码和可重新组合的应用材料，当前未按此路径准备。 |
+| LGPLv3 §4(e) | 安装信息在 GPLv3 §6 要求且运行修改后的组合应用需要时适用。需专业复核产品分发形态是否满足适用条件，并明确实际需要的资料。 |
+| 源码及版权 | 建议正式附件和二进制下载页提供同版本源码归档、构建说明、补丁及摘要，并在 EXE 安装目录和 ZIP 内包含告知、完整许可和定位源码的说明。需确认最终发行条款没有妨碍为调试库修改而进行的逆向工程。 |
+| 第三方原生组件 | 旧包另含 `PySide6/opengl32sw.dll`，需要把真实二进制对应到构建来源、许可和源码。图像插件所含第三方编解码器以及原生运行库的版本、构建选项和声明仍需逐项锁定。 |
+
+Qt 官方 SDK 归档仅用于工程替换测试。交付时仍须为实际发布的 PySide6 wheel 二进制建立对应源码、构建配置和传递许可清单。
+
+仓库 `release-compliance/` 集中保留替换步骤、审查状态、逐文件基线、四份源码的摘要及 GPLv3 与 LGPLv3 全文。发布检查需要工程和法律审核结论，并核对相关清单的摘要。未补全的版权和独立许可、实际 wheel 编译配置和补丁、Mesa/OpenGL 与编解码器对应关系，以及 GPLv3 §6 和 LGPLv3 §4 的具体适用方式仍是阻塞。既有用户软件许可沿用原状态。
 
 - [Qt LGPL 使用义务](https://www.qt.io/development/open-source-lgpl-obligations)
+- [Qt 6.12.0 官方 Windows x64 SDK](https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_6120/qt6_6120_msvc2022_64/qt.qt6.6120.win64_msvc2022_64/)
 - [Qt 源码官方下载](https://www.qt.io/development/download-open-source)
 - [Qt 6.12.0 模块源码](https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/)
 - [Qt for Python 6.12.0 源码](https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.12.0-src/)

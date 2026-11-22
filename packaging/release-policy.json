@@ -1,0 +1,11 @@
+{
+  "version": "1.2.0",
+  "openssl_minimum_3_5": [3, 5, 10],
+  "advisory": "https://openssl-library.org/news/vulnerabilities-3.5/",
+  "required_fixes": [
+    "CVE-2026-84782", "CVE-2026-107493", "CVE-2026-124709",
+    "CVE-2026-35190", "CVE-2026-88823", "CVE-2026-107496",
+    "CVE-2026-88822", "CVE-2026-95691", "CVE-2026-95692"
+  ],
+  "approved_runtimes": []
+}

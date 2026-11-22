@@ -1,0 +1,6 @@
+{
+  "native_inventory": {"status": "NEEDS_REVIEW", "evidence": "Match the final native files and hashes."},
+  "corresponding_source": {"status": "NEEDS_REVIEW", "evidence": "Wheel build configuration, patches and Mesa correspondence remain open."},
+  "third_party_notices": {"status": "NEEDS_REVIEW", "evidence": "Confirm codec and redistributable runtime notices against the final binaries."},
+  "lgpl_distribution": {"status": "NEEDS_REVIEW", "evidence": "Professional review of source delivery, recipient terms and installation information remains open."}
+}

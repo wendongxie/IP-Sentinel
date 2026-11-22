@@ -50,14 +50,13 @@ IP Sentinel 是 Windows 桌面工具，用于查看本机访问探测服务时�
 
 ## 开发与构建
 
-项目使用 Python、PySide6、HTTPX、SQLAlchemy、SQLite、APScheduler 和 keyring。Windows 构建使用 x64 Python 3.12、PyInstaller 与 Inno Setup 6.7.4。以下命令在项目根目录运行，按本机情况替换 `ISCC.exe` 路径。
+项目使用 Python、PySide6、HTTPX、SQLAlchemy、SQLite、APScheduler 和 keyring。以下开发命令在项目根目录运行。正式 Windows 构建需要符合安全门槛的 x64 Python、Inno Setup、Gitleaks 和已核验的对应源码，见 [Windows 发布流水线](docs/WINDOWS_RELEASE_PIPELINE.md)。
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-build.txt
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 .\.venv\Scripts\python.exe main.py --smoke-test
-.\packaging\build.ps1 -Python .\.venv\Scripts\python.exe -Iscc "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
 ```
 
 程序源码在 `ip_sentinel/`，测试在 `tests/`。单元测试使用隔离数据库和模拟 HTTP 响应。正常启动会连接探测服务。本地构建产物位于 `dist/` 和 `release/`。使用带 python-docx 的环境运行 `docs/generate_manual.py` 可重新生成手册。
