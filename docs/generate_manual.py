@@ -38,8 +38,8 @@ for style_name, size in (("Normal", 11), ("Title", 32), ("Heading 1", 19),
     typography(document.styles[style_name], size)
 for name in ("Normal", "List Number"):
     style = document.styles[name]
-    style.paragraph_format.space_after = Pt(7)
-    style.paragraph_format.line_spacing = 1.22
+    style.paragraph_format.space_after = Pt(8)
+    style.paragraph_format.line_spacing = 1.26
 title_style = document.styles["Title"]
 title_style.paragraph_format.space_after = Pt(24)
 style_properties = title_style.element.get_or_add_pPr()
@@ -87,22 +87,37 @@ def field_part(paragraph, kind):
     paragraph.add_run()._r.append(marker)
 
 
+# 目录：收录一级与二级标题（TOC 级别 1-2），并为两条目建立锚点链接
 toc = document.add_paragraph()
 field_part(toc, "begin")
 instruction = OxmlElement("w:instrText")
 instruction.set(qn("xml:space"), "preserve")
-instruction.text = ' TOC \\o "1-1" \\h \\z \\u '
+instruction.text = ' TOC \\o "1-2" \\h \\z \\u '
 toc.add_run()._r.append(instruction)
 field_part(toc, "separate")
 chapters = [line[2:] for line in lines if line.startswith("# ")]
-for index, chapter in enumerate(chapters, 1):
+chapter_no = 0
+section_no = 0
+for line in lines:
+    if line.startswith("# "):
+        chapter_no += 1
+        text, anchor, indent = line[2:], f"chapter_{chapter_no}", False
+    elif line.startswith("## "):
+        section_no += 1
+        text, anchor, indent = line[3:], f"section_{section_no}", True
+    else:
+        continue
     paragraph = document.add_paragraph()
     paragraph.paragraph_format.space_after = Pt(3)
     paragraph.paragraph_format.line_spacing = 1.08
+    if indent:
+        paragraph.paragraph_format.left_indent = Inches(0.28)
+    run = paragraph.add_run(("• " if indent else "") + text)
+    run.font.color.rgb = RGBColor.from_string("5A6B7B" if indent else "21496F")
+    if indent:
+        run.font.size = Pt(10)
     link = OxmlElement("w:hyperlink")
-    link.set(qn("w:anchor"), f"chapter_{index}")
-    run = paragraph.add_run(chapter)
-    run.font.color.rgb = RGBColor.from_string("21496F")
+    link.set(qn("w:anchor"), anchor)
     link.append(run._r)
     paragraph._p.append(link)
 field_part(document.paragraphs[-1], "end")
@@ -208,21 +223,28 @@ def linked_url(url):
     paragraph._p.append(link)
 
 
+def add_bookmark(paragraph, name, bid):
+    start = OxmlElement("w:bookmarkStart")
+    start.set(qn("w:id"), str(bid))
+    start.set(qn("w:name"), name)
+    end = OxmlElement("w:bookmarkEnd")
+    end.set(qn("w:id"), str(bid))
+    paragraph.runs[0]._r.addprevious(start)
+    paragraph._p.append(end)
+
+
 code = False
 chapter_index = 0
+section_index = 0
 for line in lines:
     if line.startswith("# "):
         chapter_index += 1
         paragraph = document.add_heading(line[2:], level=1)
-        start = OxmlElement("w:bookmarkStart")
-        start.set(qn("w:id"), str(chapter_index))
-        start.set(qn("w:name"), f"chapter_{chapter_index}")
-        end = OxmlElement("w:bookmarkEnd")
-        end.set(qn("w:id"), str(chapter_index))
-        paragraph.runs[0]._r.addprevious(start)
-        paragraph._p.append(end)
+        add_bookmark(paragraph, f"chapter_{chapter_index}", chapter_index)
     elif line.startswith("## "):
-        document.add_heading(line[3:], level=2)
+        section_index += 1
+        paragraph = document.add_heading(line[3:], level=2)
+        add_bookmark(paragraph, f"section_{section_index}", 100 + section_index)
     elif line.startswith("[图:"):
         image_and_caption(line)
     elif line.startswith("[表:"):
@@ -245,4 +267,5 @@ for line in lines:
 
 document.save(output)
 assert len(chapters) == 14
+assert chapter_no == chapter_index and section_no == section_index
 print(output)
